@@ -1,0 +1,26 @@
+{
+  "name": "phase-1-project",
+  "version": "1.0.0",
+  "description": "an english premiere league stats  web app  ",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/abdishukri-105/phase-1-project.git"
+  },
+  "keywords": [
+    "api",
+    "premier-league",
+    "top-scorers",
+    "js",
+    "bootstrap"
+  ],
+  "author": "Abdishukri Mohamed",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/abdishukri-105/phase-1-project/issues"
+  },
+  "homepage": "https://github.com/abdishukri-105/phase-1-project#readme"
+}
