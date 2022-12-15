@@ -9,6 +9,7 @@ const options = {
 };
 
 const topscorers = "https://api-football-beta.p.rapidapi.com/players/topscorers?season=2022&league=39"
+const food = "www.themealdb.com/api/json/v1/1/filter.php?c=Seafood"
 
 // fetch('https://api-football-beta.p.rapidapi.com/players/topscorers?season=2022&league=39', options)
 // 	.then(response => response.json())
@@ -18,9 +19,12 @@ const topscorers = "https://api-football-beta.p.rapidapi.com/players/topscorers?
     const displaytopscorers = () => {
         fetch(topscorers, options)
         	.then(response => response.json())
-        	.then(
+        	.then(topscorers => {
+                console.log(topscorers)
+                // topscorers.forEach(topscorer  =>  console.log(topscorer))
+
                 
-                response => console.log(response))
+             } )
         	.catch(err => console.error(err));
     }
 displaytopscorers()

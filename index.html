@@ -9,9 +9,10 @@
     <link rel="stylesheet" href="styles/main.css">
 </head>
 <body>
+    <section id="navbar">
     <div class="container-fluid">
         <!-- navbar  -->
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <nav class="navbar navbar-expand-lg navbar-dark" id="navigation">
          <div class="container-fluid"> 
                    <!-- brand logo -->
                 <a href="#" class="navbar-brand">
@@ -24,7 +25,7 @@
 
                 <div class="collapse navbar-collapse" id="navbarCollapse">
                     <div class="navbar-nav">
-                        <a href="#" class="nav-item nav-link">teams</a>
+                        <a href="#login" class="nav-item nav-link">teams</a>
                         <a href="#" class="nav-item nav-link">topscorers</a>
                         <a href="#" class="nav-item nav-link">league standings</a>  
                     </div>
@@ -36,7 +37,51 @@
                 </div>
          </div>
         </nav>
+    </section>
+       <!-- login form -->
+ <section  id="login">
+       <div class="login-box">
+        <h2>Login</h2>
+        <form>
+          <div class="user-box">
+            <input type="text" name="" required="">
+            <label>Username</label>
+          </div>
+          <div class="user-box">
+            <input type="password" name="" required="">
+            <label>Password</label>
+          </div>
+          <a href="#navbar">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            Submit
+          </a>
+        </form>
+      </div>
 
+      <div class="login-box">
+  <h2>Login</h2>
+  <form>
+    <div class="user-box">
+      <input type="text" name="" required="">
+      <label>Username</label>
+    </div>
+    <div class="user-box">
+      <input type="password" name="" required="">
+      <label>Password</label>
+    </div>
+    <a href="#">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      Submit
+    </a>
+  </form>
+</div>
+</section>
         
 
 
