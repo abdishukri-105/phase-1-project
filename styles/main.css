@@ -1,15 +1,16 @@
-#navigation {
+/* #navigation {
     background-color: #141e30;
-}
+} */
 
-html {
+/* html {
     height: 100%;
-  }
+  } */
   body {
     margin:0;
     padding:0;
     font-family: sans-serif;
-    background: linear-gradient(#141e30, #243b55);
+    background: #111 !important;
+    /* background: linear-gradient(#141e30, #243b55); */
   }
   
   .login-box {
@@ -170,3 +171,54 @@ html {
     }
   }
   
+  :root {
+    --gradient: linear-gradient(to left top, #e4dfe1 10%, #FF512F 90%) !important;
+  }
+  
+ 
+  
+  .card {
+    background: #222;
+    border: 1px solid #cec7ca;
+    color: rgba(250, 250, 250, 0.8);
+    margin-bottom: 2rem;
+  }
+  
+  .btn {
+    border: 2px solid;
+    border-image-slice: 1;
+    background: var(--gradient) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    border-image-source:  var(--gradient) !important; 
+    text-decoration: none;
+    transition: all .4s ease;
+  }
+  
+  .btn:hover, .btn:focus {
+        background: var(--gradient) !important;
+    -webkit-background-clip: none !important;
+    -webkit-text-fill-color: #fff !important;
+    border: 2px solid #fff !important; 
+    box-shadow: #222 1px 0 10px;
+    text-decoration: underline;
+  } 
+
+
+  /* Sticky Footer Classes */
+
+html,
+body {
+  height: 100%;
+}
+
+#page-content {
+  flex: 1 0 auto;
+}
+
+/* Other Classes for Page Styling */
+
+/* body {
+  background: #007bff;
+  background: linear-gradient(to right, #0062E6, #33AEFF);
+} */
