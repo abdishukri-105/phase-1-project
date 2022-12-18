@@ -1,82 +1,166 @@
+// api key
+const API_KEY = '1c5ef8925c7549d5aa78b4ddb9563a20'
+
 //apis
+const HEADLINES_NEWS = "https://newsapi.org/v2/top-headlines?country=in&apiKey=";
+const GENERAL_NEWS = "https://newsapi.org/v2/top-headlines?country=in&category=general&apiKey=";
+const BUSINESS_NEWS = "https://newsapi.org/v2/top-headlines?country=in&category=business&apiKey=";
 const SPORTS_NEWS = "https://newsapi.org/v2/top-headlines?country=in&category=sports&apiKey=";
 const ENTERTAINMENT_NEWS = "https://newsapi.org/v2/top-headlines?country=in&category=entertainment&apiKey=";
 const TECHNOLOGY_NEWS = "https://newsapi.org/v2/top-headlines?country=in&category=technology&pageSize=8&apiKey=";
-// api key
-const API_KEY = '1c5ef8925c7549d5aa78b4ddb9563a20';
+const SEARCH_NEWS = "https://newsapi.org/v2/everything?q=";
 
 
 
+// buttons variables
+const generalBtn = document.getElementById("general");
+const businessBtn = document.getElementById("business");
+const sportsBtn = document.getElementById("sport");
+const entertainmentBtn = document.getElementById("entertainment");
 const technologyBtn = document.getElementById("technology");
+const searchBtn = document.getElementById("searchBtn");
+
+const newsQuery = document.getElementById("newsQuery");
+const newsType = document.getElementById("newsType");
+const newsdetails = document.getElementById("newsdetails");
 
 
 
-// display technology news on click
-technologyBtn.addEventListener("click",function(){
-    newsType.innerHTML="<h4>Technology</h4>";
-    fetchTechnologyNews();
-});
+document.addEventListener('DOMContentLoaded', () => {
+
+	// display technology news on click
+	generalBtn.addEventListener("click",function(){
+		newsType.innerHTML="<h4>general news</h4>";
+		fetchGeneralNews();
+	});
+
+	businessBtn.addEventListener("click",function(){
+		newsType.innerHTML="<h4>Business </h4>";
+		fetchBusinessNews();
+	});
+
+	sportsBtn.addEventListener("click",function(){
+		newsType.innerHTML="<h4>sports</h4>";
+		fetchSportsNews();
+	});
+
+	entertainmentBtn.addEventListener("click",function(){
+		newsType.innerHTML="<h4>entertainment</h4>";
+		fetchEntertainmentNews();
+	});
+
+	technologyBtn.addEventListener("click",function(){
+		newsType.innerHTML="<h4>Technology</h4>";
+		fetchTechnologyNews();
+	});
+     
+
+
+	// fetch  news
+    const fetchGeneralNews = () => {
+	
+		fetch(GENERAL_NEWS+API_KEY)
+		.then(response => response.json())
+		.then(news =>{
+			console.log(news)
+			displayNews(news)
+		})
+		
+	}
+
+	const fetchBusinessNews = () => {
+	
+		fetch(BUSINESS_NEWS+API_KEY)
+		.then(response => response.json())
+		.then(news =>{
+			console.log(news)
+			displayNews(news)
+		})
+		
+	}
+
+	const fetchSportsNews = () => {
+	
+		fetch(SPORTS_NEWS+API_KEY)
+		.then(response => response.json())
+		.then(news =>{
+			console.log(news)
+			displayNews(news)
+		})
+		
+	}
+
+	const fetchEntertainmentNews = () => {
+	
+		fetch(ENTERTAINMENT_NEWS +API_KEY)
+		.then(response => response.json())
+		.then(news =>{
+			console.log(news)
+			displayNews(news)
+		})
+		
+	}
+
+
+	const fetchTechnologyNews = () => {
+	
+		fetch(TECHNOLOGY_NEWS+API_KEY)
+		.then(response => response.json())
+		.then(news =>{
+			console.log(news)
+			displayNews(news)
+		})
+		
+	}
 
 
 
-// fetch tech news
-const fetchTechnologyNews = async () => {
-   
-	fetch(TECHNOLOGY_NEWS+API_KEY)
-	.then(response => response.json())
-	.then(news =>{
-		console.log(news)
-		displayNews(news)
-	})
-    
-}
 
+	// render news 
+	function displayNews(news) {
 
+		newsdetails.innerHTML = "";
 
-// render news 
-function displayNews(news) {
+		news.articles.forEach(article => {
+			
+			const col = document.createElement('div');
+			col.className="col-lg-6 col-md-4 col-sm-12  card";
 
-    newsdetails.innerHTML = "";
+			const card = document.createElement('div');
+			card.className = "p-2";
 
-    news.articles.forEach(article => {
-        
-        const col = document.createElement('div');
-        col.className="col-sm-12 col-md-4 col-lg-3 p-2 card";
+			const image = document.createElement('img');
+			image.setAttribute("height","matchparent");
+			image.setAttribute("width","100%");
+			image.src = article.urlToImage;
 
-        const card = document.createElement('div');
-        card.className = "p-2";
+			const cardBody = document.createElement('div');
+			
+			const newsHeading = document.createElement('h5');
+			newsHeading.className = "card-title";
+			newsHeading.innerHTML = article.title;
 
-        const image = document.createElement('img');
-        image.setAttribute("height","matchparent");
-        image.setAttribute("width","100%");
-        image.src=article.urlToImage;
+			const discription = document.createElement('p');
+			discription.className="text-muted";
+			discription.innerHTML = article.description;
 
-        const cardBody = document.createElement('div');
-        
-        const newsHeading = document.createElement('h5');
-        newsHeading.className = "card-title";
-        newsHeading.innerHTML = article.title;
+			const link = document.createElement('a');
+			link.className="btn btn-outline-info";
+			link.setAttribute("target", "_blank");
+			link.href = article.url;
+			link.innerHTML="Read more";
 
-        const discription = document.createElement('p');
-        discription.className="text-muted";
-        discription.innerHTML = article.description;
+			cardBody.appendChild(newsHeading);
+			cardBody.appendChild(discription);
+			cardBody.appendChild(link);
 
-        const link = document.createElement('a');
-        link.className="btn btn-dark";
-        link.setAttribute("target", "_blank");
-        link.href = article.url;
-        link.innerHTML="Read more";
+			card.appendChild(image);
+			card.appendChild(cardBody);
 
-        cardBody.appendChild(newsHeading);
-        cardBody.appendChild(discription);
-        cardBody.appendChild(link);
+			col.appendChild(card);
 
-        card.appendChild(image);
-        card.appendChild(cardBody);
+			newsdetails.appendChild(col);
+		});
 
-        col.appendChild(card);
-
-        newsdetails.appendChild(col);
-    });
-
-}
+	}
+})
