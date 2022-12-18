@@ -28,6 +28,12 @@ const newsdetails = document.getElementById("newsdetails");
 
 document.addEventListener('DOMContentLoaded', () => {
 
+	window.onload = function() {
+		newsType.innerHTML="<h4>Headlines</h4>";
+		fetchHeadlines();
+	};
+	
+
 	// display technology news on click
 	generalBtn.addEventListener("click",function(){
 		newsType.innerHTML="<h4>general news</h4>";
@@ -57,6 +63,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 	// fetch  news
+
+	
+    const fetchHeadlines =  () => {
+		 fetch(HEADLINES_NEWS+API_KEY)
+		 .then(response => response.json())
+		 .then(news => displayNews(news))
+	}
+
     const fetchGeneralNews = () => {
 	
 		fetch(GENERAL_NEWS+API_KEY)
