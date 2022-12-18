@@ -1,12 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Rubik+Vinyl&family=Unbounded:wght@300&display=swap'); 
 
 
-.jumbotron {
+/* .jumbotron {
    
     background-image: url("../images/pexels-andrea-piacquadio-3761509.jpg");
     background-repeat: no-repeat;
     background-size: cover;
-}
+} */
 
 #navigation ,
 #sticky-footer {

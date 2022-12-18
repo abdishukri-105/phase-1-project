@@ -61,7 +61,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	});
      
     searchBtn.addEventListener("click",() => {
-		newsType.innerHTML="<h4>newsQuery.value</h4>";
+		// newsType.innerHTML="<h4>newsQuery.value</h4>";
 		fetchQueryNews();
 	});
 	
@@ -183,3 +183,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
 	}
 })
+
+
+// form handler
+
+const form = document.getElementById("landing-form");
+form.addEventListener("click", function(event) {
+	event.preventDefault();
+	form.style.display = "none";
+	const news = document.getElementById("news");
+	news.style.display = "block";
+  });
+  
