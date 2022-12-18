@@ -27,44 +27,46 @@ const newsdetails = document.getElementById("newsdetails");
 
 
 document.addEventListener('DOMContentLoaded', () => {
-
-	window.onload = function() {
+    // display hotnews onload
+	window.onload = () => {
 		newsType.innerHTML="<h4>Headlines</h4>";
 		fetchHeadlines();
 	};
 	
 
-	// display technology news on click
-	generalBtn.addEventListener("click",function(){
+	// display  news on click
+	generalBtn.addEventListener("click",() => {
 		newsType.innerHTML="<h4>general news</h4>";
 		fetchGeneralNews();
 	});
 
-	businessBtn.addEventListener("click",function(){
+	businessBtn.addEventListener("click",() => {
 		newsType.innerHTML="<h4>Business </h4>";
 		fetchBusinessNews();
 	});
 
-	sportsBtn.addEventListener("click",function(){
+	sportsBtn.addEventListener("click",() => {
 		newsType.innerHTML="<h4>sports</h4>";
 		fetchSportsNews();
 	});
 
-	entertainmentBtn.addEventListener("click",function(){
+	entertainmentBtn.addEventListener("click",() => {
 		newsType.innerHTML="<h4>entertainment</h4>";
 		fetchEntertainmentNews();
 	});
 
-	technologyBtn.addEventListener("click",function(){
+	technologyBtn.addEventListener("click",() => {
 		newsType.innerHTML="<h4>Technology</h4>";
 		fetchTechnologyNews();
 	});
      
-
+    searchBtn.addEventListener("click",() => {
+		newsType.innerHTML="<h4>newsQuery.value</h4>";
+		fetchQueryNews();
+	});
+	
 
 	// fetch  news
-
-	
     const fetchHeadlines =  () => {
 		 fetch(HEADLINES_NEWS+API_KEY)
 		 .then(response => response.json())
@@ -126,10 +128,13 @@ document.addEventListener('DOMContentLoaded', () => {
 		})
 		
 	}
-
-
-
-
+    
+	const fetchQueryNews =  () => {
+		 fetch(SEARCH_NEWS+encodeURIComponent(newsQuery.value)+"&apiKey="+API_KEY)
+		 .then(response => response.json())
+		 .then(news => displayNews(news))
+	}
+	
 	// render news 
 	function displayNews(news) {
 
