@@ -197,7 +197,7 @@ form.addEventListener("submit", function(event) {
 	news.style.display = "block";
   });
 
-
+// prevent user from skipping the form
 function validateForm() {
   var name = document.getElementById('name').value;
   var email = document.getElementById('email').value;
@@ -227,6 +227,7 @@ function validateForm() {
   return true;
 }
 
+// prevent scroll before signup
 function enableScroll() {
    
     document.body.style.overflow = 'auto';

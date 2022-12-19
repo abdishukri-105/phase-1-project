@@ -3,7 +3,7 @@
 
 .jumbotron {
    
-    background-image: url("../images/pexels-andrea-piacquadio-3761509.jpg");
+    background-image: url("../images/pexels-kaboompics-com-6335.jpg");
     background-repeat: no-repeat;
     background-size: cover;
 } 
@@ -20,7 +20,8 @@
 }
 
 #navigation ,
-#sticky-footer {
+#sticky-footer
+ {
     background: #8ebfbf;
     background: linear-gradient(to right, #229726, #b12525);
     
@@ -40,7 +41,10 @@ body {
     overflow: hidden;
   }
   
-
+#jumboText {
+    color: #8ebfbf;
+    color: linear-gradient(to right, #229726, #b12525); ;
+}
 
 
 
