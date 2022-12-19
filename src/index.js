@@ -187,11 +187,49 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // form handler
 
-const form = document.getElementById("landing-form");
-form.addEventListener("click", function(event) {
+const form = document.getElementById("signup-form");
+const jumbo = document.getElementById('jumbo')
+form.addEventListener("submit", function(event) {
 	event.preventDefault();
 	form.style.display = "none";
+    jumbo.style.display = "none"
 	const news = document.getElementById("news");
 	news.style.display = "block";
   });
+
+
+function validateForm() {
+  var name = document.getElementById('name').value;
+  var email = document.getElementById('email').value;
+  var password = document.getElementById('password').value;
+  var passwordConfirm = document.getElementById('password-confirm').value;
+
+  if (name == '') {
+	alert('Please enter your name');
+	return false;
+  }
+
+  if (email == '') {
+	alert('Please enter your email');
+	return false;
+  }
+
+  if (password == '') {
+	alert('Please enter a password');
+	return false;
+  }
+
+  if (password != passwordConfirm) {
+	alert('Passwords do not match');
+	return false;
+  }
+
+  return true;
+}
+
+function enableScroll() {
+   
+    document.body.style.overflow = 'auto';
   
+    return true;
+  }
