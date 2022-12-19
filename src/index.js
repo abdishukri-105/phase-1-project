@@ -2,12 +2,12 @@
 const API_KEY = '1c5ef8925c7549d5aa78b4ddb9563a20'
 
 //apis
-const HEADLINES_NEWS = "https://newsapi.org/v2/top-headlines?country=in&apiKey=";
-const GENERAL_NEWS = "https://newsapi.org/v2/top-headlines?country=in&category=general&apiKey=";
-const BUSINESS_NEWS = "https://newsapi.org/v2/top-headlines?country=in&category=business&apiKey=";
-const SPORTS_NEWS = "https://newsapi.org/v2/top-headlines?country=in&category=sports&apiKey=";
-const ENTERTAINMENT_NEWS = "https://newsapi.org/v2/top-headlines?country=in&category=entertainment&apiKey=";
-const TECHNOLOGY_NEWS = "https://newsapi.org/v2/top-headlines?country=in&category=technology&pageSize=8&apiKey=";
+const HEADLINES_NEWS = "https://newsapi.org/v2/top-headlines?country=gb&apiKey=";
+const GENERAL_NEWS = "https://newsapi.org/v2/top-headlines?country=gb&category=general&apiKey=";
+const BUSINESS_NEWS = "https://newsapi.org/v2/top-headlines?country=gb&category=business&apiKey=";
+const SPORTS_NEWS = "https://newsapi.org/v2/top-headlines?country=gb&category=sports&apiKey=";
+const ENTERTAINMENT_NEWS = "https://newsapi.org/v2/top-headlines?country=gb&category=entertainment&apiKey=";
+const TECHNOLOGY_NEWS = "https://newsapi.org/v2/top-headlines?country=us&category=technology&pageSize=8&apiKey=";
 const SEARCH_NEWS = "https://newsapi.org/v2/everything?q=";
 
 
