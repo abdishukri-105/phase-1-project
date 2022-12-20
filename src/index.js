@@ -60,9 +60,11 @@ document.addEventListener('DOMContentLoaded', () => {
 		fetchTechnologyNews();
 	});
      
-    searchBtn.addEventListener("click",() => {
+    searchBtn.addEventListener("click",(e) => {
 		// newsType.innerHTML="<h4>newsQuery.value</h4>";
+         e.preventDefault()
 		fetchQueryNews();
+		document.getElementById("search-form").reset();
 	});
 	
 
@@ -143,7 +145,7 @@ document.addEventListener('DOMContentLoaded', () => {
 		news.articles.forEach(article => {
 			
 			const col = document.createElement('div');
-			col.className="col-lg-6 col-md-4 col-sm-12  card";
+			col.className="col-lg-6 col-md-4 col-sm-12  card ";
 
 			const card = document.createElement('div');
 			card.className = "p-2";
@@ -164,7 +166,7 @@ document.addEventListener('DOMContentLoaded', () => {
 			discription.innerHTML = article.description;
 
 			const link = document.createElement('a');
-			link.className="btn btn-outline-info";
+			link.className="btn btn-outline-info btn-lg btn-block";
 			link.setAttribute("target", "_blank");
 			link.href = article.url;
 			link.innerHTML="Read more";
