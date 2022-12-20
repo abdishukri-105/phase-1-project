@@ -32,16 +32,9 @@ Install dependencies
   npm install
 ```
 
-Start the json server
-
-
-
-
-
-
 ### 2.visit the app directly
 
-#### to visit the app directly click here https://phase-1-project-eta.vercel.app/
+- to visit the app directly click here https://phase-1-project-eta.vercel.app/
 
 
 
