@@ -3,6 +3,7 @@ const API_KEY = '1c5ef8925c7549d5aa78b4ddb9563a20'
 
 //apis
 const HEADLINES_NEWS = "https://newsapi.org/v2/top-headlines?country=gb&apiKey=";
+const Headlines = "https://newsapi.org/v2/top-headlines?country=us&apiKey=1c5ef8925c7549d5aa78b4ddb9563a20"
 const GENERAL_NEWS = "https://newsapi.org/v2/top-headlines?country=gb&category=general&apiKey=";
 const BUSINESS_NEWS = "https://newsapi.org/v2/top-headlines?country=gb&category=business&apiKey=";
 const SPORTS_NEWS = "https://newsapi.org/v2/top-headlines?country=gb&category=sports&apiKey=";
@@ -70,9 +71,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
 	// fetch  news
     const fetchHeadlines =  () => {
-		 fetch(HEADLINES_NEWS+API_KEY)
+		 fetch(Headlines)
 		 .then(response => response.json())
-		 .then(news => displayNews(news))
+		 .then(news => { 
+			console.log(news)
+			displayNews(news)})
 	}
 
     const fetchGeneralNews = () => {
@@ -134,7 +137,9 @@ document.addEventListener('DOMContentLoaded', () => {
 	const fetchQueryNews =  () => {
 		 fetch(SEARCH_NEWS+encodeURIComponent(newsQuery.value)+"&apiKey="+API_KEY)
 		 .then(response => response.json())
-		 .then(news => displayNews(news))
+		 .then(news =>{
+			console.log(news)
+			 displayNews(news)})
 	}
 	
 	// render news 
